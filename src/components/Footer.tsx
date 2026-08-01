@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Mail, Phone, ArrowUp, Download } from 'lucide-react';
+import { Mail, Phone, ArrowUp, Download } from 'lucide-react';
 import { site } from '@/data/site';
 
 export default function Footer() {
@@ -37,12 +37,8 @@ export default function Footer() {
                 <a href={`tel:${site.phoneLink}`} className="hover:text-gold-400 transition-colors">{site.phone}</a>
               </li>
               <li className="flex items-center gap-3">
-                <Linkedin size={16} className="text-gold-500" />
-                <a href={site.linkedin} target="_blank" rel="noreferrer" className="hover:text-gold-400 transition-colors">LinkedIn</a>
-              </li>
-              <li className="flex items-center gap-3">
                 <Download size={16} className="text-gold-500" />
-                <a href={site.brochurePdf} download className="hover:text-gold-400 transition-colors">Download brochure PDF</a>
+                <a href={site.brochurePdf} download className="hover:text-gold-400 transition-colors">Download PDF</a>
               </li>
             </ul>
           </div>

@@ -4,12 +4,19 @@ import { ArrowLeft, MapPin, Calendar, Check } from 'lucide-react';
 import { useProjects } from '@/hooks/useProjects';
 import Lightbox, { useLightbox } from '@/components/Lightbox';
 import Reveal from '@/components/Reveal';
+import { useEffect } from 'react';
 
 export default function ProjectDetail() {
   const { id } = useParams();
   const { projects, loading } = useProjects();
   const project = projects.find((p) => p.id === id);
   const lb = useLightbox();
+
+  useEffect(() => {
+    if (project) {
+      document.title = `${project.title} | Zaid Almasri Architecture`
+    }
+  }, [project])
 
   if (loading) return <div className="pt-40 text-center text-stone-500">Loading project…</div>;
   if (!project) return <Navigate to="/projects" replace />;
@@ -32,7 +39,6 @@ export default function ProjectDetail() {
     { icon: MapPin, label: 'Location', value: project.location },
     { icon: Calendar, label: 'Year', value: String(project.year) },
   ];
-
   return (
     <div className="pt-20">
       {/* Hero */}

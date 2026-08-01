@@ -1,13 +1,27 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 export default function ScrollToTop() {
   const [show, setShow] = useState(false);
+  const { pathname } = useLocation();
 
+  // يرجع لأعلى الصفحة عند تغيير الرابط
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant',
+    });
+  }, [pathname]);
+
+  // إظهار زر العودة للأعلى
   useEffect(() => {
     const onScroll = () => setShow(window.scrollY > 600);
+
     window.addEventListener('scroll', onScroll);
+
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -18,7 +32,9 @@ export default function ScrollToTop() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5 }}
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={() =>
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+          }
           className="fixed bottom-8 right-8 z-40 w-12 h-12 flex items-center justify-center bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 hover:bg-gold-600 dark:hover:bg-gold-500 transition-colors duration-300 shadow-lg"
           aria-label="Scroll to top"
         >

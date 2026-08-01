@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MessageCircle, Linkedin, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MessageCircle,  MapPin, Send, CheckCircle } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 import { site } from '@/data/site';
 
@@ -8,7 +8,6 @@ const contactInfo = [
   { icon: Mail, label: 'Email', value: site.email, href: `mailto:${site.email}` },
   { icon: Phone, label: 'Phone', value: site.phone, href: `tel:${site.phoneLink}` },
   { icon: MessageCircle, label: 'WhatsApp', value: site.phone, href: `https://wa.me/${site.whatsapp}` },
-  { icon: Linkedin, label: 'LinkedIn', value: site.name, href: site.linkedin },
 ];
 
 export default function Contact() {

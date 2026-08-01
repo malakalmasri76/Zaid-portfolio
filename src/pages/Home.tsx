@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowDown } from "lucide-react";
-import { services } from "@/data/services";
-import { processSteps } from "@/data/process";
 import ProjectCard from "@/components/ProjectCard";
 import Reveal from "@/components/Reveal";
 import { useProjects } from "@/hooks/useProjects";
@@ -176,85 +174,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Preview */}
-      <section className="page-padding py-20 bg-stone-50 dark:bg-stone-900">
-        <Reveal className="text-center mb-12">
-          <span className="section-label">What I Do</span>
-          <h2 className="section-title mt-4">Services</h2>
-        </Reveal>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.slice(0, 4).map((s, i) => (
-            <Reveal key={s.id} delay={(i % 4) * 0.1}>
-              <div className="p-8 bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 card-hover h-full">
-                <s.icon
-                  size={32}
-                  className="text-gold-600 dark:text-gold-400 mb-6"
-                  strokeWidth={1.2}
-                />
-                <h3 className="font-display text-xl font-medium mb-3 text-stone-900 dark:text-stone-100">
-                  {s.title}
-                </h3>
-                <p className="text-sm text-stone-500 dark:text-stone-400 leading-relaxed">
-                  {s.description}
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-        <div className="text-center mt-10">
-          <Link to="/services" className="btn-outline">
-            All Services
-          </Link>
-        </div>
-      </section>
-
-      {/* Process Preview */}
-      <section className="page-padding py-20">
-        <Reveal className="text-center mb-16">
-          <span className="section-label">How I Work</span>
-          <h2 className="section-title mt-4">Design Process</h2>
-        </Reveal>
-        <div className="relative max-w-5xl mx-auto">
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-stone-200 dark:bg-stone-700 -translate-x-1/2" />
-          {processSteps.map((step, i) => (
-            <Reveal
-              key={step.number}
-              delay={0.1}
-              className={`relative flex ${i % 2 === 0 ? "md:justify-start" : "md:justify-end"} mb-12`}
-            >
-              <div
-                className={`md:w-5/12 ${i % 2 === 0 ? "md:text-right md:pr-12" : "md:pl-12"}`}
-              >
-                <div
-                  className="flex items-center gap-4 mb-3"
-                  style={i % 2 === 0 ? { justifyContent: "flex-end" } : {}}
-                >
-                  <span className="font-display text-4xl text-gold-600 dark:text-gold-400">
-                    {step.number}
-                  </span>
-                  <step.icon
-                    size={24}
-                    className="text-stone-400"
-                    strokeWidth={1.2}
-                  />
-                </div>
-                <h3 className="font-display text-2xl font-medium mb-2 text-stone-900 dark:text-stone-100">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-stone-500 dark:text-stone-400 leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-        <div className="text-center mt-8">
-          <Link to="/process" className="btn-outline">
-            Full Process
-          </Link>
-        </div>
-      </section>
-
+      
       {/* CTA */}
       <section className="page-padding py-30 bg-stone-950">
         <Reveal className="max-w-3xl mx-auto text-center">
