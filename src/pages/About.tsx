@@ -48,7 +48,7 @@ export default function About() {
           </Reveal>
           <Reveal delay={0.2}>
             <div className="relative aspect-[4/5] overflow-hidden">
-              <img src="/about.jpeg" alt="Zaid Almasri" className="w-full h-full object-cover" />
+              <img src="/about.png" alt="Zaid Almasri" className="w-full h-full object-cover" />
             </div>
           </Reveal>
         </div>
