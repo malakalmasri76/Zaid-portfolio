@@ -8,5 +8,5 @@ export const site = {
   phoneLink: import.meta.env.VITE_CONTACT_PHONE_LINK || '+972597028130',
   whatsapp: import.meta.env.VITE_WHATSAPP_NUMBER || '972597028130',
   formEndpoint: import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/xnjekpdw',
-  brochurePdf: import.meta.env.VITE_BROCHURE_PDF || '/brochure.pdf',
+  brochurePdf: import.meta.env.VITE_BROCHURE_PDF || '/zaid_portfolio.pdf',
 };
